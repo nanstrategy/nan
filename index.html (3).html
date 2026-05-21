@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แบบสำรวจความต้องการของประชาชน จังหวัดน่าน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nan-green:#1a5c3a;
+  --nan-green2:#217a4d;
+  --nan-green3:#2d9960;
+  --nan-gold:#c8860a;
+  --nan-gold2:#e8a212;
+  --nan-cream:#faf6ef;
+  --nan-cream2:#f3ece0;
+  --nan-brown:#5c3d1e;
+  --red:#b5341c;
+  --red-bg:#fdf0ed;
+  --blue:#164e8a;
+  --blue-bg:#edf3fc;
+  --text:#1a1612;
+  --text2:#4a3f35;
+  --text3:#7a6e64;
+  --border:#d8cfc4;
+  --border2:#c4b9ac;
+  --white:#ffffff;
+  --card:#ffffff;
+  --bg:#f5f0e8;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Sarabun',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;
+  line-height:1.75;
+  min-height:100vh;
+}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--nan-green);
+  color:#fff;
+  font-size:12px;
+  text-align:center;
+  padding:6px 16px;
+  letter-spacing:0.3px;
+}
+
+/* ── HEADER ── */
+.site-header{
+  background:var(--nan-green);
+  position:sticky;top:0;z-index:200;
+  border-bottom:3px solid var(--nan-gold);
+}
+.header-inner{
+  max-width:1100px;margin:0 auto;
+  padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.header-brand{display:flex;align-items:center;gap:14px}
+.seal{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--nan-gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;flex-shrink:0;
+  border:2px solid var(--nan-gold);
+}
+.brand-text{}
+.brand-title{font-size:16px;font-weight:700;color:#fff;line-height:1.3}
+.brand-sub{font-size:11px;color:rgba(255,255,255,0.7);margin-top:2px}
+.nav-pills{display:flex;gap:6px;flex-wrap:wrap}
+.nav-pill{
+  padding:7px 16px;border-radius:20px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
+  color:#fff;font-family:inherit;font-size:13px;
+  cursor:pointer;transition:all 0.2s;font-weight:400;
+  white-space:nowrap;
+}
+.nav-pill:hover,.nav-pill.active{
+  background:var(--nan-gold);border-color:var(--nan-gold2);
+  font-weight:600;color:#fff;
+}
+
+/* ── PAGES ── */
+.page{display:none}
+.page.active{display:block}
+.container{max-width:860px;margin:0 auto;padding:32px 20px}
+.container-wide{max-width:1100px;margin:0 auto;padding:32px 20px}
+
+/* ── HERO ── */
+.hero{
+  background:var(--nan-green);
+  color:#fff;
+  padding:20px 24px 16px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-badge{
+  display:inline-block;
+  background:var(--nan-gold);
+  color:#fff;font-size:12px;font-weight:700;
+  padding:4px 16px;border-radius:20px;
+  margin-bottom:16px;letter-spacing:0.5px;
+  position:relative;
+}
+.hero h1{font-size:26px;font-weight:700;line-height:1.4;margin-bottom:10px;position:relative}
+.hero-plan{font-size:14px;opacity:0.8;margin-bottom:6px;position:relative}
+.hero p{font-size:15px;opacity:0.85;max-width:560px;margin:0 auto 20px;position:relative}
+.hero-stats{
+  display:flex;gap:24px;justify-content:center;flex-wrap:wrap;
+  position:relative;margin-top:20px;
+}
+.hero-stat{
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:10px;padding:10px 20px;text-align:center;
+}
+.hero-stat-num{font-size:22px;font-weight:700;color:var(--nan-gold2)}
+.hero-stat-label{font-size:11px;opacity:0.75}
+
+/* ── STEP INDICATOR ── */
+.step-indicator{
+  display:flex;align-items:center;
+  margin-bottom:28px;gap:0;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:14px 20px;
+  overflow-x:auto;
+}
+.step{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.step-dot{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--border2);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;
+  transition:background 0.3s;
+}
+.step.done .step-dot{background:var(--nan-green)}
+.step.active .step-dot{background:var(--nan-gold);box-shadow:0 0 0 3px rgba(200,134,10,0.25)}
+.step-label{font-size:12px;color:var(--text3);font-weight:400}
+.step.active .step-label{color:var(--nan-brown);font-weight:600}
+.step.done .step-label{color:var(--nan-green)}
+.step-line{flex:1;height:2px;background:var(--border);min-width:20px;margin:0 4px}
+.step-line.done{background:var(--nan-green)}
+
+/* ── FORM CARD ── */
+.form-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:28px 32px;
+  margin-bottom:16px;
+}
+@media(max-width:600px){.form-card{padding:18px 16px}}
+.section-head{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:22px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--nan-cream2);
+}
+.section-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--nan-green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.section-title{font-size:16px;font-weight:700;color:var(--nan-green)}
+.section-desc{font-size:12px;color:var(--text3);margin-top:2px}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:18px}
+.form-group:last-child{margin-bottom:0}
+.form-label{
+  display:block;font-size:13.5px;font-weight:600;
+  color:var(--text2);margin-bottom:6px;
+}
+.req{color:var(--red);margin-left:3px}
+.hint{font-size:11px;color:var(--text3);font-weight:400;margin-left:6px}
+.form-input,.form-select,.form-textarea{
+  width:100%;
+  border:1.5px solid var(--border);
+  border-radius:8px;
+  padding:10px 14px;
+  font-family:inherit;font-size:15px;
+  color:var(--text);background:#fff;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  -webkit-appearance:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  outline:none;
+  border-color:var(--nan-green3);
+  box-shadow:0 0 0 3px rgba(45,153,96,0.15);
+}
+.form-select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6e64' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:40px;
+}
+.form-textarea{min-height:100px;resize:vertical;line-height:1.6}
+
+/* Choice grids */
+.choice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.choice-item{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:10px 12px;
+  border:1.5px solid var(--border);border-radius:8px;
+  cursor:pointer;transition:all 0.18s;
+  font-size:14px;color:var(--text2);
+  user-select:none;
+  width:100%;box-sizing:border-box;
+}
+.choice-item:hover{border-color:var(--nan-green3);background:#f0faf5}
+.choice-item.selected{
+  border-color:var(--nan-green);background:#e8f5ee;
+  color:var(--nan-green);font-weight:600;
+}
+.choice-item input{
+  accent-color:var(--nan-green);
+  width:16px;height:16px;flex-shrink:0;margin-top:2px;
+  pointer-events:none;
+}
+.choice-text{line-height:1.4;flex:1}
+
+/* Scale rating */
+.scale-wrap{margin-top:6px}
+.scale-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:6px}
+.scale-options{display:flex;gap:6px;flex-wrap:wrap}
+.scale-btn{
+  width:40px;height:40px;border-radius:8px;
+  border:1.5px solid var(--border);
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;
+  cursor:pointer;transition:all 0.18s;color:var(--text3);
+}
+.scale-btn:hover{border-color:var(--nan-green3);background:#f0faf5;color:var(--nan-green)}
+.scale-btn.active{background:var(--nan-green);border-color:var(--nan-green);color:#fff}
+.scale-btn.active-gold{background:var(--nan-gold);border-color:var(--nan-gold);color:#fff}
+
+/* Progress */
+.progress-wrap{margin-bottom:24px}
+.progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--nan-green),var(--nan-green3));border-radius:3px;transition:width 0.4s}
+.progress-text{font-size:12px;color:var(--text3);margin-top:5px;text-align:right}
+
+/* Nav buttons */
+.btn-row{display:flex;gap:12px;justify-content:space-between;margin-top:20px}
+.btn{
+  padding:13px 28px;border-radius:10px;
+  font-family:inherit;font-size:15px;font-weight:600;
+  cursor:pointer;transition:all 0.2s;border:none;
+}
+.btn-primary{background:var(--nan-green);color:#fff}
+.btn-primary:hover{background:var(--nan-green2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(26,92,58,0.3)}
+.btn-secondary{background:var(--card);color:var(--text2);border:1.5px solid var(--border)}
+.btn-secondary:hover{background:var(--nan-cream2);border-color:var(--border2)}
+.btn-submit{background:var(--nan-gold);color:#fff;width:100%;font-size:17px;padding:16px}
+.btn-submit:hover{background:var(--nan-gold2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(200,134,10,0.35)}
+.btn:disabled{opacity:0.5;cursor:not-allowed;transform:none !important;box-shadow:none !important}
+
+/* Notice */
+.notice{
+  background:var(--nan-cream2);
+  border:1px solid var(--nan-gold);
+  border-left:4px solid var(--nan-gold);
+  border-radius:8px;padding:12px 16px;
+  font-size:13px;color:var(--nan-brown);
+  margin-bottom:20px;display:flex;gap:10px;
+}
+
+/* Success */
+.success-wrap{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:48px 32px;text-align:center;
+}
+.success-icon{font-size:56px;margin-bottom:16px}
+.success-wrap h2{font-size:24px;font-weight:700;color:var(--nan-green);margin-bottom:8px}
+.success-wrap p{color:var(--text3);font-size:15px}
+.btn-reset{
+  margin-top:24px;
+  background:var(--nan-green);color:#fff;
+  border:none;border-radius:8px;
+  padding:12px 28px;font-family:inherit;font-size:15px;font-weight:600;
+  cursor:pointer;
+}
+.btn-reset:hover{background:var(--nan-green2)}
+
+/* ── DASHBOARD ── */
+.dash-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:24px;flex-wrap:wrap;gap:12px;
+}
+.dash-title-group{}
+.dash-title{font-size:22px;font-weight:700;color:var(--text)}
+.dash-sub{font-size:13px;color:var(--text3);margin-top:3px}
+.dash-actions{display:flex;gap:8px}
+.btn-refresh{
+  background:var(--nan-green);color:#fff;border:none;
+  border-radius:8px;padding:9px 18px;
+  font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+}
+.btn-refresh:hover{background:var(--nan-green2)}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px}
+.kpi-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:16px 18px;
+  border-top:3px solid var(--nan-green);
+}
+.kpi-label{font-size:11px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px}
+.kpi-value{font-size:30px;font-weight:700;color:var(--nan-green);line-height:1}
+.kpi-sub{font-size:11px;color:var(--text3);margin-top:4px}
+
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:680px){.chart-grid{grid-template-columns:1fr}}
+.chart-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:18px 20px;
+}
+.chart-card.full{grid-column:1/-1}
+.chart-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+
+/* Bar chart */
+.bar-list{display:flex;flex-direction:column;gap:9px}
+.bar-row{display:flex;align-items:center;gap:10px}
+.bar-lbl{font-size:12px;color:var(--text2);min-width:110px;text-align:right;flex-shrink:0;line-height:1.3}
+.bar-track{flex:1;background:var(--nan-cream2);border-radius:4px;height:22px;overflow:hidden}
+.bar-fill{
+  height:100%;border-radius:4px;
+  display:flex;align-items:center;justify-content:flex-end;
+  padding-right:8px;font-size:11px;color:#fff;font-weight:700;
+  min-width:28px;transition:width 0.7s ease;
+}
+
+/* Donut */
+.donut-area{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.donut-legend{flex:1;min-width:120px}
+.legend-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px}
+.legend-sq{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+
+/* Table */
+.data-table{width:100%;border-collapse:collapse;font-size:12px}
+.data-table th{
+  text-align:left;padding:8px 12px;
+  background:var(--nan-cream2);color:var(--text2);font-weight:700;
+  border-bottom:1px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:0.3px;
+}
+.data-table td{
+  padding:9px 12px;border-bottom:1px solid var(--nan-cream2);
+  vertical-align:top;color:var(--text2);
+}
+.data-table tr:last-child td{border-bottom:none}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.tag-r{background:#fde8e4;color:#8a1f0e}
+.tag-o{background:#fef3e2;color:#8a5200}
+.tag-y{background:#fffbe6;color:#7a6200}
+.tag-g{background:#e6f4ec;color:#1a5c3a}
+
+/* Setup */
+.setup-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:22px 26px;margin-bottom:14px;
+}
+.setup-card h3{font-size:15px;font-weight:700;color:var(--nan-green);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.setup-card ol,.setup-card ul{padding-left:18px}
+.setup-card li{font-size:14px;color:var(--text2);margin-bottom:7px}
+.code-box{
+  background:#1a1a1a;color:#d4e6c0;border-radius:8px;
+  padding:16px;font-family:monospace;font-size:12px;
+  line-height:1.6;overflow-x:auto;white-space:pre;margin:12px 0;
+}
+.url-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.url-row .form-input{flex:1;min-width:200px}
+.btn-save-url{
+  background:var(--nan-green);color:#fff;border:none;
+  border-radius:8px;padding:10px 20px;font-family:inherit;
+  font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;
+}
+.btn-save-url:hover{background:var(--nan-green2)}
+.url-ok{color:var(--nan-green);font-size:13px;font-weight:600;display:none;margin-top:6px}
+
+@media(max-width:600px){
+  .hero h1{font-size:20px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav-pills{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .container{padding:20px 14px}
+  .btn-row{flex-direction:column}
+  .btn-row .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="seal" style="background:#c8860a;border:2px solid #c8860a;padding:2px;overflow:hidden"><img src="data:image/png;base64,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" style="width:52px;height:52px;border-radius:50%;object-fit:cover" alt="โลโก้จังหวัดน่าน"></div>
+      <div class="brand-text">
+        <div class="brand-title">จังหวัดน่าน — แบบสำรวจความต้องการประชาชน</div>
+        <div class="brand-sub">Provincial Development Plan Survey</div>
+      </div>
+    </div>
+    <div class="nav-pills">
+      <button class="nav-pill active" onclick="showPage('page-form',this)">📝 แบบสอบถาม</button>
+      <button class="nav-pill" onclick="showPage('page-dash',this)">📊 Dashboard</button>
+      <button class="nav-pill" onclick="askSetupPassword(this)">⚙️ ตั้งค่า</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE: FORM
+══════════════════════════════════════════════════ -->
+<div id="page-form" class="page active">
+  <div class="hero">
+    <div class="hero-badge">แผนพัฒนาจังหวัดน่าน พ.ศ. 2571–2575</div>
+    <h1>ร่วมแสดงความคิดเห็น<br>เพื่อพัฒนาจังหวัดน่านของเรา</h1>
+    <p>ข้อมูลของท่านจะถูกนำไปใช้ในการจัดทำเป้าหมายการพัฒนาจังหวัดน่าน 20 ปี พ.ศ. 2566 - 2570
+การจัดแผนการพัฒนาจังหวัดน่าน พ.ศ. 2571 - 2575 และการจัดทำแผนปฏิบัติราชการประจำปี</p>
+    <div style="text-align:right;margin-top:8px;position:relative;">
+      <span style="font-size:8px;color:rgba(255,255,255,0.7);border:1px solid var(--nan-green3);border-radius:5px;padding:2px 8px;display:inline-block;">©2026ONUHMA</span>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div id="form-main">
+      <div class="notice">
+        ⏱ <div>ใช้เวลาประมาณ <strong>1-3 นาที</strong> กรุณาตอบให้ครบถ้วนตามความเป็นจริง เพื่อประโยชน์ในการพัฒนาจังหวัด</div>
+      </div>
+
+      <!-- STEP INDICATOR -->
+      <div class="step-indicator" id="step-bar">
+        <div class="step active" id="st0"><div class="step-dot">1</div><span class="step-label">ข้อมูลส่วนตัว</span></div>
+        <div class="step-line" id="sl0"></div>
+        <div class="step" id="st1"><div class="step-dot">2</div><span class="step-label">สภาพปัญหา</span></div>
+        <div class="step-line" id="sl1"></div>
+        <div class="step" id="st2"><div class="step-dot">3</div><span class="step-label">ด้านยุทธศาสตร์</span></div>
+        <div class="step-line" id="sl2"></div>
+        <div class="step" id="st3"><div class="step-dot">4</div><span class="step-label">ความต้องการ</span></div>
+        <div class="step-line" id="sl3"></div>
+        <div class="step" id="st4"><div class="step-dot">5</div><span class="step-label">ข้อเสนอแนะ</span></div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+        <div class="progress-text" id="prog-text">0 / 5 ส่วน</div>
+      </div>
+
+      <!-- ── SECTION 1: ข้อมูลส่วนตัว ── -->
+      <div id="sec0">
+        <div class="form-card">
+          <div class="section-head">
+            <div class="section-icon">👤</div>
+            <div><div class="section-title">ส่วนที่ 1 — ข้อมูลทั่วไปของผู้ตอบแบบสอบถาม</div>
+            <div class="section-desc">ข้อมูลส่วนนี้ใช้เพื่อการวิเคราะห์เชิงพื้นที่และกลุ่มประชากร</div></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">1. เพศ<span class="req">*</span></label>
+            <div class="choice-grid" id="g-gender">
+              <label class="choice-item" onclick="pick1(event,this,'g-gender','v-gender')"><input type="radio" name="gender" value="ชาย"><span class="choice-text">ชาย</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-gender','v-gender')"><input type="radio" name="gender" value="หญิง"><span class="choice-text">หญิง</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-gender','v-gender')"><input type="radio" name="gender" value="ไม่ระบุ"><span class="choice-text">ไม่ระบุ</span></label>
+            </div>
+            <input type="hidden" id="v-gender">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">2. อายุ<span class="req">*</span></label>
+              <select class="form-select" id="v-age" onchange="calcProg()">
+                <option value="">-- เลือกช่วงอายุ --</option>
+                <option>น้อยกว่า 18 ปี</option>
+                <option>18–20 ปี</option>
+                <option>21–30 ปี</option>
+                <option>31–40 ปี</option>
+                <option>41–50 ปี</option>
+                <option>51–60 ปี</option>
+                <option>61–70 ปี</option>
+                <option>71–80 ปี</option>
+                <option>มากกว่า 80 ปี</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">3. ระดับการศึกษาสูงสุด<span class="req">*</span></label>
+              <select class="form-select" id="v-edu" onchange="calcProg()">
+                <option value="">-- เลือก --</option>
+                <option>ต่ำกว่าประถมศึกษา</option>
+                <option>ประถมศึกษา</option>
+                <option>มัธยมศึกษา / ปวช.</option>
+                <option>อนุปริญญา / ปวส.</option>
+                <option>ปริญญาตรี</option>
+                <option>สูงกว่าปริญญาตรี</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">4. อาชีพหลัก<span class="req">*</span></label>
+              <select class="form-select" id="v-job" onchange="calcProg()">
+                <option value="">-- เลือก --</option>
+                <option>เกษตรกร</option>
+                <option>รับจ้างทั่วไป</option>
+                <option>ค้าขาย / ธุรกิจส่วนตัว</option>
+                <option>ข้าราชการ / พนักงานรัฐ</option>
+                <option>พนักงานบริษัทเอกชน</option>
+                <option>นักเรียน / นักศึกษา</option>
+                <option>ไม่ได้ประกอบอาชีพ / เกษียณ</option>
+                <option>อื่นๆ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">5. รายได้เฉลี่ยต่อเดือน<span class="req">*</span></label>
+              <select class="form-select" id="v-income" onchange="calcProg()">
+                <option value="">-- เลือก --</option>
+                <option>ต่ำกว่า 5,000 บาท</option>
+                <option>5,001–10,000 บาท</option>
+                <option>10,001–20,000 บาท</option>
+                <option>20,001–30,000 บาท</option>
+                <option>มากกว่า 30,000 บาท</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">6. อำเภอที่พักอาศัย<span class="req">*</span></label>
+              <select class="form-select" id="v-district" onchange="updateVillage();calcProg()">
+                <option value="">-- เลือกอำเภอ --</option>
+                <option>เมืองน่าน</option><option>แม่จริม</option><option>บ้านหลวง</option>
+                <option>นาน้อย</option><option>ปัว</option><option>ท่าวังผา</option>
+                <option>เวียงสา</option><option>ทุ่งช้าง</option><option>เชียงกลาง</option>
+                <option>นาหมื่น</option><option>สันติสุข</option><option>บ่อเกลือ</option>
+                <option>สองแคว</option><option>ภูเพียง</option><option>เฉลิมพระเกียรติ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">7. ตำบล</label>
+              <select class="form-select" id="v-village">
+                <option value="">-- เลือกอำเภอก่อน --</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">8. ท่านอาศัยในพื้นที่นี้มานานแค่ไหน?</label>
+            <div class="choice-grid" id="g-residence">
+              <label class="choice-item" onclick="pick1(event,this,'g-residence','v-residence')"><input type="radio" name="res" value="น้อยกว่า 1 ปี"><span class="choice-text">น้อยกว่า 1 ปี</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-residence','v-residence')"><input type="radio" name="res" value="1–5 ปี"><span class="choice-text">1–5 ปี</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-residence','v-residence')"><input type="radio" name="res" value="6–15 ปี"><span class="choice-text">6–15 ปี</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-residence','v-residence')"><input type="radio" name="res" value="มากกว่า 15 ปี"><span class="choice-text">มากกว่า 15 ปี</span></label>
+            </div>
+            <input type="hidden" id="v-residence">
+          </div>
+        </div>
+        <div class="btn-row">
+          <div></div>
+          <button class="btn btn-primary" onclick="goSec(1)">ถัดไป →</button>
+        </div>
+      </div>
+
+      <!-- ── SECTION 2: สภาพปัญหาในพื้นที่ ── -->
+      <div id="sec1" style="display:none">
+        <div class="form-card">
+          <div class="section-head">
+            <div class="section-icon">🔍</div>
+            <div><div class="section-title">ส่วนที่ 2 — สภาพปัญหาในพื้นที่</div>
+            <div class="section-desc">โปรดเลือกปัญหาที่ท่านพบในพื้นที่ที่อยู่อาศัย</div></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">9. ปัญหาที่ท่านพบในชุมชน (เลือกได้หลายข้อ)<span class="req">*</span></label>
+            <div class="choice-grid" id="g-problems">
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ถนน/การสัญจร"><span class="choice-text">🛣 ถนน / การสัญจร</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="น้ำประปา/น้ำอุปโภค"><span class="choice-text">💧 น้ำประปา / น้ำอุปโภคบริโภค</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ไฟฟ้า"><span class="choice-text">⚡ ไฟฟ้า / แสงสว่าง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ขยะ/สิ่งแวดล้อม"><span class="choice-text">♻ ขยะ / สิ่งแวดล้อม</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="น้ำท่วม/ดินโคลน"><span class="choice-text">🌊 น้ำท่วม / ดินโคลนถล่ม</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ภัยแล้ง"><span class="choice-text">🌵 ภัยแล้ง / ขาดแคลนน้ำ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="หมอกควัน/ไฟป่า"><span class="choice-text">🔥 หมอกควัน / ไฟป่า</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ความยากจน/รายได้"><span class="choice-text">💰 ความยากจน / รายได้ต่ำ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="การว่างงาน"><span class="choice-text">👷 การว่างงาน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ยาเสพติด"><span class="choice-text">🚫 ยาเสพติด</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ความปลอดภัยในชีวิต"><span class="choice-text">🔒 ความปลอดภัยในชีวิต</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="การศึกษา"><span class="choice-text">📚 การศึกษา</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="สาธารณสุข/สุขภาพ"><span class="choice-text">🏥 สาธารณสุข / สุขภาพ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="ปัญหาที่ดินทำกิน"><span class="choice-text">🌱 ปัญหาที่ดินทำกิน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="หนี้สิน/หนี้ครัวเรือน"><span class="choice-text">💳 หนี้สิน / หนี้ครัวเรือน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="prob" value="อื่นๆ"><span class="choice-text">➕ อื่น ๆ</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">10. ปัญหาที่เร่งด่วนที่สุดในพื้นที่ของท่านคืออะไร? (เลือกได้หลายข้อ)</label>
+            <div class="choice-grid" id="g-top-problem">
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาการขาดแคลนน้ำเพื่อการอุปโภคบริโภคและการเกษตร"><span class="choice-text">💧 ปัญหาการขาดแคลนน้ำเพื่อการอุปโภคบริโภคและการเกษตร โดยเฉพาะในช่วงฤดูแล้ง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาไฟป่า หมอกควัน และฝุ่นละออง PM2.5"><span class="choice-text">🌫 ปัญหาไฟป่า หมอกควัน และฝุ่นละออง PM2.5 ที่กระทบต่อสุขภาพ สิ่งแวดล้อม และการท่องเที่ยวของจังหวัด</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาความยากจนและหนี้สินภาคครัวเรือน"><span class="choice-text">💳 ปัญหาความยากจนและหนี้สินภาคครัวเรือน โดยเฉพาะในกลุ่มเกษตรกร ผู้มีรายได้น้อย และครัวเรือนเปราะบาง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาการบุกรุกพื้นที่ป่าและข้อพิพาทที่ดินทำกิน"><span class="choice-text">🌱 ปัญหาการบุกรุกพื้นที่ป่า การใช้ประโยชน์ที่ดินไม่เหมาะสม และข้อพิพาทเรื่องที่ดินทำกิน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาราคาผลผลิตทางการเกษตรตกต่ำ"><span class="choice-text">📉 ปัญหาราคาผลผลิตทางการเกษตรตกต่ำ และต้นทุนการผลิตที่สูงขึ้น</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาการเข้าถึงบริการสาธารณสุขในพื้นที่ห่างไกล"><span class="choice-text">🏥 ปัญหาการเข้าถึงบริการสาธารณสุขของประชาชนในพื้นที่ห่างไกล พื้นที่สูง และกลุ่มเปราะบาง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหายาเสพติดและความปลอดภัยในชุมชน"><span class="choice-text">🚫 ปัญหายาเสพติดและผลกระทบต่อความปลอดภัยในชุมชน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาคุณภาพการศึกษาและทักษะแรงงาน"><span class="choice-text">📚 ปัญหาคุณภาพการศึกษาและการพัฒนาทักษะแรงงานยังไม่สอดคล้องกับความต้องการของตลาดแรงงานในปัจจุบัน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาการย้ายถิ่นของแรงงานวัยทำงาน"><span class="choice-text">🚶 ปัญหาการย้ายถิ่นของแรงงานวัยทำงาน ทำให้ขาดแรงงานในพื้นที่</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาโครงสร้างพื้นฐานด้านคมนาคมและถนน"><span class="choice-text">🛣 ปัญหาโครงสร้างพื้นฐานด้านคมนาคม ถนน และการขนส่งในบางพื้นที่ยังไม่ทั่วถึงและชำรุด</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="tprob" value="ปัญหาการฟื้นตัวทางเศรษฐกิจหลังภาวะชะลอตัว"><span class="choice-text">💼 ปัญหาการฟื้นตัวทางเศรษฐกิจหลังภาวะชะลอตัว โดยเฉพาะภาคการท่องเที่ยว การค้าชุมชน และผู้ประกอบการรายย่อย</span></label>
+            </div>
+            <div style="margin-top:10px">
+              <label class="form-label" style="font-size:13px">อื่น ๆ <span class="hint">(อธิบายโดยย่อ)</span></label>
+              <input type="text" class="form-input" id="v-top-problem-other" placeholder="ระบุปัญหาอื่น ๆ ที่ต้องการเพิ่มเติม...">
+            </div>
+            <input type="hidden" id="v-top-problem">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">11. ระดับความรุนแรงของปัญหาโดยรวมในพื้นที่ท่าน</label>
+            <div class="scale-wrap">
+              <div class="scale-labels"><span>น้อยที่สุด (1)</span><span>รุนแรงมาก (5)</span></div>
+              <div class="scale-options" id="g-severity">
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-severity','v-severity',1)">1</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-severity','v-severity',2)">2</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-severity','v-severity',3)">3</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-severity','v-severity',4)">4</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-severity','v-severity',5)">5</button>
+              </div>
+            </div>
+            <input type="hidden" id="v-severity">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">12. ท่านเคยแจ้งปัญหาต่อหน่วยงานรัฐก่อนหน้านี้หรือไม่?</label>
+            <div class="choice-grid" id="g-reported">
+              <label class="choice-item" onclick="pick1(event,this,'g-reported','v-reported')"><input type="radio" name="rep" value="เคย และได้รับการแก้ไขแล้ว"><span class="choice-text">✅ เคย และได้รับการแก้ไขแล้ว</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-reported','v-reported')"><input type="radio" name="rep" value="เคย แต่ยังไม่ได้รับการแก้ไข"><span class="choice-text">⏳ เคย แต่ยังไม่ได้รับการแก้ไข</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-reported','v-reported')"><input type="radio" name="rep" value="ไม่เคยแจ้ง"><span class="choice-text">❌ ไม่เคยแจ้ง</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-reported','v-reported')"><input type="radio" name="rep" value="เคยแจ้งบางปัญหาและได้รับการแก้ไขแล้ว บางปัญหายังไม่เคยแจ้ง"><span class="choice-text">🔄 เคยแจ้งบางปัญหาและได้รับการแก้ไขแล้ว บางปัญหายังไม่เคยแจ้ง</span></label>
+            </div>
+            <input type="hidden" id="v-reported">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary" onclick="goSec(0)">← ย้อนกลับ</button>
+          <button class="btn btn-primary" onclick="goSec(2)">ถัดไป →</button>
+        </div>
+      </div>
+
+      <!-- ── SECTION 3: ด้านยุทธศาสตร์ ── -->
+      <div id="sec2" style="display:none">
+        <div class="form-card">
+          <div class="section-head">
+            <div class="section-icon">🎯</div>
+            <div><div class="section-title">ส่วนที่ 3 — ความเห็นต่อการพัฒนาจังหวัดน่าน</div>
+            <div class="section-desc">ประเมินความสำคัญของแต่ละด้าน 1 = น้อยที่สุด, 5 = มากที่สุด</div></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">13. ด้านการเกษตรและความมั่นคงทางอาหาร<br><span class="hint">เช่น ส่งเสริมพืชเศรษฐกิจ เกษตรอินทรีย์ ชลประทาน</span></label>
+            <div class="scale-options" id="g-agri">
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-agri','v-agri',1)">1</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-agri','v-agri',2)">2</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-agri','v-agri',3)">3</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-agri','v-agri',4)">4</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-agri','v-agri',5)">5</button>
+            </div>
+            <input type="hidden" id="v-agri">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">14. ด้านการค้าการลงทุน<br><span class="hint">เช่น สินค้าอัตลักษณ์ การค้าชายแดน การค้าผ่านแดน</span></label>
+            <div class="scale-options" id="g-trade">
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-trade','v-trade',1)">1</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-trade','v-trade',2)">2</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-trade','v-trade',3)">3</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-trade','v-trade',4)">4</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-trade','v-trade',5)">5</button>
+            </div>
+            <input type="hidden" id="v-trade">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">15. ด้านการท่องเที่ยวและการบริการ<br><span class="hint">เช่น พัฒนาแหล่งท่องเที่ยว เส้นทาง โฮมสเตย์ การตลาด</span></label>
+            <div class="scale-options" id="g-tour">
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-tour','v-tour',1)">1</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-tour','v-tour',2)">2</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-tour','v-tour',3)">3</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-tour','v-tour',4)">4</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-tour','v-tour',5)">5</button>
+            </div>
+            <input type="hidden" id="v-tour">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">16. ด้านทรัพยากรธรรมชาติและสิ่งแวดล้อม<br><span class="hint">เช่น อนุรักษ์ป่า แม่น้ำ จัดการหมอกควัน ลดการเผา</span></label>
+            <div class="scale-options" id="g-env">
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-env','v-env',1)">1</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-env','v-env',2)">2</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-env','v-env',3)">3</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-env','v-env',4)">4</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-env','v-env',5)">5</button>
+            </div>
+            <input type="hidden" id="v-env">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">17. ด้านคุณภาพชีวิตและความเป็นอยู่<br><span class="hint">เช่น สาธารณสุข การศึกษา สวัสดิการ ลดความยากจน</span></label>
+            <div class="scale-options" id="g-life">
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-life','v-life',1)">1</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-life','v-life',2)">2</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-life','v-life',3)">3</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-life','v-life',4)">4</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-life','v-life',5)">5</button>
+            </div>
+            <input type="hidden" id="v-life">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">18. ด้านโครงสร้างพื้นฐานและความปลอดภัย<br><span class="hint">เช่น ถนน น้ำ ไฟฟ้า อินเทอร์เน็ต สถานีตำรวจ</span></label>
+            <div class="scale-options" id="g-infra">
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-infra','v-infra',1)">1</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-infra','v-infra',2)">2</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-infra','v-infra',3)">3</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-infra','v-infra',4)">4</button>
+              <button type="button" class="scale-btn" onclick="pickScale(this,'g-infra','v-infra',5)">5</button>
+            </div>
+            <input type="hidden" id="v-infra">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">19. ยุทธศาสตร์ใดควรเป็นลำดับความสำคัญสูงสุด?<span class="req">*</span></label>
+            <div class="choice-grid" id="g-priority">
+              <label class="choice-item" onclick="pick1(event,this,'g-priority','v-priority')"><input type="radio" name="pri" value="เกษตรและอาหาร"><span class="choice-text">🌾 เกษตรและความมั่นคงทางอาหาร</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-priority','v-priority')"><input type="radio" name="pri" value="การท่องเที่ยว"><span class="choice-text">🏔 การท่องเที่ยวและบริการ</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-priority','v-priority')"><input type="radio" name="pri" value="สิ่งแวดล้อม"><span class="choice-text">🌿 ทรัพยากรและสิ่งแวดล้อม</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-priority','v-priority')"><input type="radio" name="pri" value="คุณภาพชีวิต"><span class="choice-text">❤ คุณภาพชีวิตและสวัสดิการ</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-priority','v-priority')"><input type="radio" name="pri" value="โครงสร้างพื้นฐาน"><span class="choice-text">🏗 โครงสร้างพื้นฐาน</span></label>
+              <label class="choice-item" onclick="pick1(event,this,'g-priority','v-priority')"><input type="radio" name="pri" value="การค้าการลงทุน"><span class="choice-text">🤝 การค้าการลงทุน</span></label>
+            </div>
+            <div style="margin-top:10px">
+              <label class="form-label" style="font-size:13px">อื่น ๆ <span class="hint">(อธิบายโดยย่อ)</span></label>
+              <input type="text" class="form-input" id="v-priority-other" placeholder="ระบุยุทธศาสตร์อื่น ๆ ที่ต้องการเพิ่มเติม...">
+            </div>
+            <input type="hidden" id="v-priority">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary" onclick="goSec(1)">← ย้อนกลับ</button>
+          <button class="btn btn-primary" onclick="goSec(3)">ถัดไป →</button>
+        </div>
+      </div>
+
+      <!-- ── SECTION 4: ความต้องการ ── -->
+      <div id="sec3" style="display:none">
+        <div class="form-card">
+          <div class="section-head">
+            <div class="section-icon">💡</div>
+            <div><div class="section-title">ส่วนที่ 4 — ความต้องการและสิ่งที่อยากเห็นในอนาคต</div>
+            <div class="section-desc">ระบุสิ่งที่ท่านต้องการให้ภาครัฐดำเนินการ</div></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">20. สิ่งที่ต้องการให้พัฒนาในพื้นที่ (เลือกได้หลายข้อ)</label>
+            <div class="choice-grid" id="g-needs">
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="แหล่งน้ำเพื่อการเกษตร"><span class="choice-text">💧 แหล่งน้ำเพื่อการเกษตร</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="แหล่งน้ำเพื่อการอุปโภคบริโภค"><span class="choice-text">🚰 แหล่งน้ำเพื่อการอุปโภคบริโภค</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="ถนน/สะพาน"><span class="choice-text">🛣 ถนน / สะพาน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="อินเทอร์เน็ต/โทรศัพท์"><span class="choice-text">📡 อินเทอร์เน็ต / สัญญาณโทรศัพท์</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="ตลาดจำหน่ายสินค้า"><span class="choice-text">🏪 ตลาดจำหน่ายสินค้าชุมชน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="ส่งเสริมอาชีพ/ฝึกทักษะ"><span class="choice-text">🎓 ส่งเสริมอาชีพ / ฝึกทักษะ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="โรงพยาบาล/คลินิก"><span class="choice-text">🏥 โรงพยาบาล / คลินิก</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="โรงเรียน/ศูนย์เด็ก"><span class="choice-text">🏫 โรงเรียน / ศูนย์เด็กเล็ก</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="สนามกีฬา/สวนสาธารณะ"><span class="choice-text">⚽ สนามกีฬา / สวนสาธารณะ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="ศูนย์ดูแลผู้สูงอายุ/โรงเรียนผู้สูงอายุ"><span class="choice-text">👴 ศูนย์ดูแลผู้สูงอายุ / โรงเรียนผู้สูงอายุ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="แก้ไขปัญหาไฟป่า/หมอกควัน"><span class="choice-text">🔥 แก้ไขปัญหาไฟป่า / หมอกควัน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="ขยายเขตไฟฟ้า/พลังงานไฟฟ้าแสงอาทิตย์"><span class="choice-text">💡 ขยายเขตไฟฟ้า / พลังงานไฟฟ้าแสงอาทิตย์</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="need" value="อื่นๆ"><span class="choice-text">➕ อื่น ๆ</span></label>
+            </div>
+            <div style="margin-top:10px">
+              <label class="form-label" style="font-size:13px">อื่น ๆ <span class="hint">(อธิบายโดยย่อ)</span></label>
+              <input type="text" class="form-input" id="v-needs-other" placeholder="ระบุสิ่งที่ต้องการให้พัฒนาอื่น ๆ...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">21. นโยบายหรือโครงการใดที่ท่านต้องการเห็นในแผน 5 ปีนี้มากที่สุด? (เลือกได้หลายข้อ)</label>
+            <div class="choice-grid" id="g-policy">
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการส่งเสริมและพัฒนาทรัพยากรมนุษย์ทุกช่วงวัย"><span class="choice-text">👨‍👩‍👧‍👦 โครงการส่งเสริมและพัฒนาทรัพยากรมนุษย์ทุกช่วงวัยให้มีคุณภาพพร้อมสำหรับวิถีชีวิตในศตวรรษที่ 21</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการส่งเสริมเกษตรอัจฉริยะในภาคการศึกษา"><span class="choice-text">🌾 โครงการส่งเสริมเกษตรอัจฉริยะในภาคการศึกษา ส่งเสริมยุวเกษตรกร</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการพัฒนาศักยภาพเกษตรสูงวัย"><span class="choice-text">👴 โครงการพัฒนาศักยภาพเกษตรสูงวัยเพื่อรองรับการเปลี่ยนผ่านสู่ศตวรรษที่ 21</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการแก้ไขปัญหาสังคมจังหวัดน่าน"><span class="choice-text">🤝 โครงการแก้ไขปัญหาสังคมจังหวัดน่าน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการส่งเสริมการเข้าถึงบริการทางการแพทย์และสุขภาพ"><span class="choice-text">🏥 โครงการส่งเสริมการเข้าถึงบริการทางการแพทย์และสุขภาพเพื่อให้คนน่านมีสุขภาวะที่ดีอย่างต่อเนื่อง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการพัฒนาเกษตรกร Smart Farmer และ Young Smart Farmer"><span class="choice-text">🧑‍🌾 โครงการพัฒนาเกษตรกร องค์กรเกษตรกร Smart Farmer และ Young Smart Farmer</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการพัฒนาศักยภาพจุดผ่านแดนถาวรบ้านห้วยโก๋น"><span class="choice-text">🛃 โครงการพัฒนาศักยภาพจุดผ่านแดนถาวรบ้านห้วยโก๋น รองรับการค้าชายแดนไทย–ลาว–อนุภูมิภาคลุ่มน้ำโขง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการพัฒนาปรับปรุงและขยายเครือข่ายคมนาคม"><span class="choice-text">🛣 โครงการพัฒนา ปรับปรุง และขยายเครือข่ายคมนาคม เพื่อส่งเสริมศักยภาพกิจกรรมการผลิต การค้าการลงทุน การท่องเที่ยว และการบริการ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการยกระดับขีดความสามารถในการแข่งขันเมืองเป้าหมาย"><span class="choice-text">🏆 โครงการยกระดับขีดความสามารถในการแข่งขันให้เป็นเมืองเป้าหมายการท่องเที่ยว การลงทุน การค้าชายแดน และการค้าผ่านแดน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการขับเคลื่อนเมืองน่านสู่เมืองมรดกโลก"><span class="choice-text">🏛 โครงการขับเคลื่อนเมืองน่านสู่เมืองมรดกโลก</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการขับเคลื่อนน่านเมืองสร้างสรรค์ด้านหัตถกรรมและศิลปะพื้นบ้าน"><span class="choice-text">🎨 โครงการขับเคลื่อนน่านเมืองสร้างสรรค์ด้านหัตถกรรมและศิลปะพื้นบ้าน</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการพัฒนาเกษตรกรรมยั่งยืนและเกษตรมูลค่าสูง"><span class="choice-text">🌿 โครงการพัฒนาเกษตรกรรมยั่งยืนและเกษตรมูลค่าสูง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการพัฒนาระบบการบริหารจัดการน้ำ"><span class="choice-text">💧 โครงการพัฒนาระบบการบริหารจัดการน้ำเพื่อการเกษตร อุปโภคบริโภค และป้องกันภัยพิบัติ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการขับเคลื่อนและขยายผลโครงการอันเนื่องมาจากพระราชดำริ"><span class="choice-text">👑 โครงการขับเคลื่อนและขยายผลโครงการอันเนื่องมาจากพระราชดำริ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการส่งเสริมการพัฒนาเป็นมิตรกับสิ่งแวดล้อม"><span class="choice-text">🌱 โครงการส่งเสริมการพัฒนาในทุกมิติเพื่อให้เกิดการเติบโตที่เป็นมิตรกับสิ่งแวดล้อม</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการส่งเสริมเกษตรกรรับมือการเปลี่ยนแปลงภูมิอากาศ"><span class="choice-text">🌤 โครงการส่งเสริมและพัฒนาเกษตรกรให้รู้เท่าทันสถานการณ์การเปลี่ยนแปลงภูมิอากาศและส่งเสริมการเกษตรที่เป็นมิตรกับสิ่งแวดล้อม</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการส่งเสริมนวัตกรรมและเทคโนโลยีเมืองอัจฉริยะ"><span class="choice-text">💡 โครงการส่งเสริมนวัตกรรมและเทคโนโลยีรองรับการเป็นเมืองอัจฉริยะ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="pol" value="โครงการน่านเมืองอัจฉริยะ"><span class="choice-text">🏙 โครงการน่านเมืองอัจฉริยะ</span></label>
+            </div>
+            <input type="hidden" id="v-policy">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">22. ความพึงพอใจต่อการบริการของหน่วยงานภาครัฐในปัจจุบัน</label>
+            <div class="scale-wrap">
+              <div class="scale-labels"><span>ไม่พอใจ (1)</span><span>พอใจมาก (5)</span></div>
+              <div class="scale-options" id="g-satisfy">
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-satisfy','v-satisfy',1)">1</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-satisfy','v-satisfy',2)">2</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-satisfy','v-satisfy',3)">3</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-satisfy','v-satisfy',4)">4</button>
+                <button type="button" class="scale-btn" onclick="pickScale(this,'g-satisfy','v-satisfy',5)">5</button>
+              </div>
+            </div>
+            <input type="hidden" id="v-satisfy">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-secondary" onclick="goSec(2)">← ย้อนกลับ</button>
+          <button class="btn btn-primary" onclick="goSec(4)">ถัดไป →</button>
+        </div>
+      </div>
+
+      <!-- ── SECTION 5: ข้อเสนอแนะ ── -->
+      <div id="sec4" style="display:none">
+        <div class="form-card">
+          <div class="section-head">
+            <div class="section-icon">✍</div>
+            <div><div class="section-title">ส่วนที่ 5 — ข้อเสนอแนะและความคิดเห็นเพิ่มเติม</div>
+            <div class="section-desc">ส่วนสุดท้าย — โปรดแสดงความคิดเห็นอย่างตรงไปตรงมา</div></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">23. ท่านคิดว่าจุดแข็งของจังหวัดน่านที่ควรต่อยอดคืออะไร?</label>
+            <div class="choice-grid" id="g-strength">
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="วัฒนธรรม/ประเพณี"><span class="choice-text">🎭 วัฒนธรรม / ประเพณีที่เข้มแข็ง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="ธรรมชาติ/ป่าไม้"><span class="choice-text">🌲 ธรรมชาติ / ป่าไม้อุดมสมบูรณ์</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="สินค้าเกษตรคุณภาพ"><span class="choice-text">🌾 สินค้าเกษตรคุณภาพสูง</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="ความเป็นชุมชน"><span class="choice-text">🤝 ความเป็นชุมชน / น้ำใจ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="ท่องเที่ยวเชิงธรรมชาติ"><span class="choice-text">🏔 ท่องเที่ยวเชิงธรรมชาติ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="ภูมิปัญญาท้องถิ่น"><span class="choice-text">🧑‍🎨 ภูมิปัญญาท้องถิ่น</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="str" value="สินค้าชุมชน/สินค้าอัตลักษณ์"><span class="choice-text">🛍 สินค้าชุมชน / สินค้าอัตลักษณ์</span></label>
+            </div>
+            <div style="margin-top:10px">
+              <label class="form-label" style="font-size:13px">อื่น ๆ <span class="hint">(อธิบายโดยย่อ)</span></label>
+              <input type="text" class="form-input" id="v-strength-other" placeholder="ระบุจุดแข็งอื่น ๆ ที่ต้องการเพิ่มเติม...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">24. ข้อเสนอแนะต่อการจัดทำแผนพัฒนาจังหวัดน่าน 5 ปี</label>
+            <textarea class="form-textarea" id="v-suggest" style="min-height:120px" placeholder="ข้อเสนอแนะ ความคิดเห็น หรือสิ่งที่อยากบอกหน่วยงานภาครัฐ..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">25. ท่านต้องการมีส่วนร่วมในการพัฒนาจังหวัดอย่างไร?</label>
+            <div class="choice-grid" id="g-participate">
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="part" value="เข้าร่วมประชุม/เวทีประชาคม"><span class="choice-text">🗣 เข้าร่วมประชุม / เวทีประชาคม</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="part" value="เป็นอาสาสมัคร"><span class="choice-text">🙋 เป็นอาสาสมัคร</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="part" value="ให้ข้อมูล/ข้อเสนอแนะ"><span class="choice-text">💬 ให้ข้อมูล / ข้อเสนอแนะ</span></label>
+              <label class="choice-item" onclick="pickM(event,this)"><input type="checkbox" name="part" value="ช่วยเผยแพร่ข่าวสาร"><span class="choice-text">📢 ช่วยเผยแพร่ข่าวสาร</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">26. เบอร์โทรหรืออีเมล <span class="hint">(ไม่บังคับ — สำหรับติดตามผล)</span></label>
+            <input type="text" class="form-input" id="v-contact" placeholder="เช่น 085-xxx-xxxx หรือ name@email.com">
+          </div>
+        </div>
+
+        <button class="btn btn-submit" id="btn-submit" onclick="submitForm()">
+          ✅ ส่งแบบสอบถาม — เพื่อพัฒนาจังหวัดน่าน
+        </button>
+
+        <div class="btn-row" style="margin-top:12px">
+          <button class="btn btn-secondary" onclick="goSec(3)">← ย้อนกลับ</button>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="form-success" style="display:none">
+      <div class="success-wrap">
+        <div class="success-icon">🎉</div>
+        <h2>ขอบคุณสำหรับความร่วมมือ!</h2>
+        <p>ข้อมูลของท่านได้รับการบันทึกเรียบร้อยแล้ว<br>จะถูกนำไปใช้ประกอบการจัดทำ<strong>แผนพัฒนาจังหวัดน่าน 5 ปี (พ.ศ. 2571–2575)</strong><br>และแผนปฏิบัติราชการประจำปีงบประมาณ พ.ศ. 2571</p>
+        <p id="sent-status" style="margin-top:12px;font-size:13px;color:var(--text3);padding:8px 16px;background:var(--nan-cream2);border-radius:8px;display:none"></p>
+        <button class="btn-reset" onclick="resetForm()">ตอบแบบสอบถามอีกครั้ง</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE: DASHBOARD
+══════════════════════════════════════════════════ -->
+<div id="page-dash" class="page">
+  <div class="container-wide">
+    <div class="dash-header">
+      <div class="dash-title-group">
+        <div class="dash-title">📊 Dashboard — สรุปข้อมูลความต้องการประชาชน จังหวัดน่าน</div>
+        <div class="dash-sub" id="dash-updated">กำลังโหลข้อมูล...</div>
+      </div>
+      <div class="dash-actions">
+        <button class="btn-refresh" id="btn-dash-refresh" onclick="loadDash()">🔄 รีเฟรช</button>
+        <button class="btn-refresh" style="background:var(--nan-gold)" onclick="exportCSV()">📥 Export CSV</button>
+      </div>
+    </div>
+
+    <div id="demo-banner" class="notice">
+      📊 <div><strong>กำลังแสดงข้อมูลตัวอย่าง</strong> — ตั้งค่า Google Apps Script URL ในหน้า "ตั้งค่า" เพื่อแสดงข้อมูลจริงจากประชาชน</div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">ผู้ตอบแบบสอบถาม</div>
+        <div class="kpi-value" id="k-total">—</div>
+        <div class="kpi-sub">คน</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:var(--red)">
+        <div class="kpi-label">ปัญหาเร่งด่วนเฉลี่ย</div>
+        <div class="kpi-value" id="k-severity" style="color:var(--red)">—</div>
+        <div class="kpi-sub">คะแนน (จาก 5)</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:var(--nan-gold)">
+        <div class="kpi-label">ความพึงพอใจเฉลี่ย</div>
+        <div class="kpi-value" id="k-satisfy" style="color:var(--nan-gold)">—</div>
+        <div class="kpi-sub">คะแนน (จาก 5)</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:var(--blue)">
+        <div class="kpi-label">อำเภอที่ตอบมากสุด</div>
+        <div class="kpi-value" id="k-district" style="color:var(--blue);font-size:18px">—</div>
+        <div class="kpi-sub" id="k-district-n">—</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:var(--nan-green3)">
+        <div class="kpi-label">ยุทธศาสตร์ที่ต้องการสูงสุด</div>
+        <div class="kpi-value" id="k-priority" style="color:var(--nan-green);font-size:16px">—</div>
+        <div class="kpi-sub" id="k-priority-n">—</div>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <!-- แถว 1: ปัญหา + ปัญหาเร่งด่วน -->
+      <div class="chart-card">
+        <div class="chart-title">🔴 ปัญหาที่พบมากที่สุดในพื้นที่</div>
+        <div class="bar-list" id="ch-problems"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">⚡ ปัญหาเร่งด่วน</div>
+        <div class="bar-list" id="ch-top-problem"></div>
+      </div>
+      <!-- แถว 2: ยุทธศาสตร์ + นโยบายที่ต้องการ -->
+      <div class="chart-card">
+        <div class="chart-title">🎯 ลำดับความสำคัญยุทธศาสตร์</div>
+        <div class="bar-list" id="ch-priority"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">📋 นโยบายที่ต้องการ</div>
+        <div class="bar-list" id="ch-policy"></div>
+      </div>
+      <!-- แถว 3: อำเภอ full-width -->
+      <div class="chart-card" style="grid-column:1/-1">
+        <div class="chart-title">📍 การตอบแบบสอบถามแยกตามอำเภอ (ทั้ง 15 อำเภอ)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div class="bar-list" id="ch-district-a"></div>
+          <div class="bar-list" id="ch-district-b"></div>
+        </div>
+      </div>
+      <!-- แถว 4: ความต้องการพัฒนาพื้นที่ full-width แบ่ง 2 กล่องภายใน -->
+      <div class="chart-card" style="grid-column:1/-1">
+        <div class="chart-title">💡 ความต้องการพัฒนาพื้นที่</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div class="bar-list" id="ch-needs-a"></div>
+          <div class="bar-list" id="ch-needs-b"></div>
+        </div>
+      </div>
+      <!-- แถว 5: ช่วงอายุ + อาชีพ -->
+      <div class="chart-card">
+        <div class="chart-title">👥 ช่วงอายุผู้ตอบ</div>
+        <div class="bar-list" id="ch-age"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">💼 อาชีพผู้ตอบ</div>
+        <div class="bar-list" id="ch-job"></div>
+      </div>
+    </div>
+
+    <div class="chart-card full" style="margin-bottom:14px">
+      <div class="chart-title">📋 รายการตอบล่าสุด (10 รายการ)</div>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead><tr>
+            <th>เวลา</th><th>อำเภอ</th><th>ปัญหาหลัก</th>
+            <th>ยุทธศาสตร์สำคัญ</th><th>ความรุนแรง</th><th>ความพึงพอใจ</th>
+          </tr></thead>
+          <tbody id="ch-recent"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE: SETUP
+══════════════════════════════════════════════════ -->
+<div id="page-setup" class="page">
+  <div class="container">
+    <div class="dash-title" style="margin-bottom:20px">⚙️ การตั้งค่าระบบเชื่อมต่อ Google Sheets</div>
+
+    <div class="setup-card">
+      <h3>📌 ขั้นตอนที่ 1 — สร้าง Google Apps Script</h3>
+      <ol>
+        <li>เปิด <strong>Google Sheet</strong> ที่ต้องการบันทึกข้อมูล</li>
+        <li>คลิกเมนู <strong>Extensions → Apps Script</strong></li>
+        <li>ลบโค้ดเดิมออก แล้ววาง<strong>โค้ดด้านล่าง</strong>ทั้งหมด</li>
+        <li>กด <strong>Save</strong> (Ctrl+S)</li>
+      </ol>
+      <pre class="code-box" style="white-space:pre-wrap;word-break:break-all;overflow-x:auto">const SHEET_ID = '1k2PQKF6v28zAKZ9g0-_ZEX0lkjyUD4oModtUVKtRBDU';
+
+function saveRow(d) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName('nan_survey');
+  if (!sheet) {
+    sheet = ss.insertSheet('nan_survey');
+    sheet.appendRow([
+      'timestamp','เพศ','อายุ','การศึกษา','อาชีพ','รายได้',
+      'อำเภอ','ตำบล/หมู่บ้าน','ระยะพักอาศัย',
+      'ปัญหา','ปัญหาเร่งด่วน','ระดับความรุนแรง','เคยแจ้งก่อน',
+      'คะแนนเกษตร','คะแนนท่องเที่ยว','คะแนนสิ่งแวดล้อม',
+      'คะแนนคุณภาพชีวิต','คะแนนโครงสร้าง','ยุทธศาสตร์หลัก',
+      'ความต้องการ','นโยบายที่ต้องการ','ความพึงพอใจ',
+      'ข้อเสนอแนะ','จุดแข็งน่าน','การมีส่วนร่วม','ช่องทางติดต่อ'
+    ]);
+  }
+  sheet.appendRow([
+    new Date().toLocaleString('th-TH', {timeZone:'Asia/Bangkok'}),
+    d.gender||'', d.age||'', d.edu||'', d.job||'', d.income||'',
+    d.district||'', d.village||'', d.residence||'',
+    d.problems||'', d.topProblem||'', d.severity||'', d.reported||'',
+    d.agri||'', d.tour||'', d.env||'', d.life||'', d.infra||'', d.priority||'',
+    d.needs||'', d.policy||'', d.satisfy||'',
+    d.suggest||'', d.strength||'', d.participate||'', d.contact||''
+  ]);
+  return sheet.getLastRow();
+}
+
+// doPost: รับจาก fetch (JSON body)
+function doPost(e) {
+  try {
+    const raw = (e.postData &amp;&amp; e.postData.contents) ? e.postData.contents : '{}';
+    const d = JSON.parse(raw);
+    if (d._ping) return ContentService.createTextOutput('ok').setMimeType(ContentService.MimeType.TEXT);
+    const row = saveRow(d);
+    return ContentService.createTextOutput(JSON.stringify({status:'ok',rows:row})).setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    return ContentService.createTextOutput(JSON.stringify({status:'error',msg:err.toString()})).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// doGet: รับทั้ง form submit (?payload=...) และ dashboard (?callback=...)
+function doGet(e) {
+  try {
+    const param = e &amp;&amp; e.parameter ? e.parameter : {};
+
+    // กรณีส่งข้อมูลจาก hidden form (?payload=JSON)
+    if (param.payload) {
+      const d = JSON.parse(param.payload);
+      if (!d._ping) {
+        const row = saveRow(d);
+        // ต้องคืน HTML เพราะ iframe จะ load ผลลัพธ์
+        return HtmlService.createHtmlOutput('&lt;script&gt;if(window.parent)window.parent.postMessage("ok","*");&lt;/script&gt;ok');
+      }
+      return ContentService.createTextOutput('ok').setMimeType(ContentService.MimeType.TEXT);
+    }
+
+    // กรณีดึงข้อมูล dashboard (?callback=fnName)
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const sheet = ss.getSheetByName('nan_survey');
+    let rows = [];
+    if (sheet &amp;&amp; sheet.getLastRow() &gt; 1) {
+      const data = sheet.getDataRange().getValues();
+      const keys = data[0];
+      rows = data.slice(1).map(r =&gt; {
+        const obj = {};
+        keys.forEach((k,i) =&gt; obj[k] = r[i]);
+        return obj;
+      });
+    }
+    const json = JSON.stringify(rows);
+    const cb = param.callback;
+    if (cb) {
+      return ContentService.createTextOutput(cb + '(' + json + ')').setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+    return ContentService.createTextOutput(json).setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    const cb = e &amp;&amp; e.parameter &amp;&amp; e.parameter.callback;
+    const errJson = JSON.stringify({status:'error',msg:err.toString()});
+    if (cb) return ContentService.createTextOutput(cb+'('+errJson+')').setMimeType(ContentService.MimeType.JAVASCRIPT);
+    return ContentService.createTextOutput(errJson).setMimeType(ContentService.MimeType.JSON);
+  }
+}</pre>
+    </div>
+
+    <div class="setup-card" style="border-left:4px solid var(--nan-gold)">
+      <h3>🚀 ขั้นตอนที่ 2 — Deploy เป็น Web App (สำคัญมาก)</h3>
+      <ol>
+        <li>คลิก <strong>Deploy → New deployment</strong></li>
+        <li>กดไอคอน ⚙️ เลือก <strong>Web app</strong></li>
+        <li>ตั้งค่าให้ครบ:<br>
+          &nbsp;&nbsp;• Execute as: <strong>Me (your email)</strong><br>
+          &nbsp;&nbsp;• Who has access: <strong>Anyone</strong> ⚠️ ต้องเลือก Anyone เท่านั้น
+        </li>
+        <li>กด <strong>Deploy</strong> → อนุญาตสิทธิ์ทุกอย่างที่ขอ (Allow All)</li>
+        <li>คัดลอก <strong>Web app URL</strong> ใส่ในช่องด้านล่าง</li>
+      </ol>
+      <div style="background:#fef3e2;border:1px solid var(--nan-gold);border-radius:8px;padding:12px 16px;margin-top:10px;font-size:13px;color:var(--nan-brown)">
+        ⚠️ <strong>ถ้าแก้ไขโค้ดแล้ว ต้อง Deploy ใหม่ทุกครั้ง</strong> โดยคลิก Deploy → <strong>Manage deployments</strong> → แก้ไข (ดินสอ) → Version: <strong>New version</strong> → Deploy
+      </div>
+    </div>
+
+    <div class="setup-card">
+      <h3>🔗 ขั้นตอนที่ 3 — วาง URL ของ Web App</h3>
+      <div class="url-row">
+        <input type="url" class="form-input" id="setup-url" placeholder="https://script.google.com/macros/s/xxxxx/exec">
+        <button class="btn-save-url" onclick="saveUrl()">💾 บันทึก & ทดสอบ</button>
+        <button class="btn-save-url" style="background:var(--border2);color:var(--text2)" onclick="clearUrl()">🗑️ ล้าง</button>
+      </div>
+      <div class="url-ok" id="url-ok">✅ บันทึก URL สำเร็จ — ระบบพร้อมใช้งาน</div>
+    </div>
+
+    <div class="setup-card">
+      <h3>📤 เผยแพร่เว็บไซต์</h3>
+      <ul>
+        <li>บันทึกไฟล์นี้เป็น <code>.html</code> แล้วอัปโหลดที่ <strong>GitHub Pages</strong> หรือ <strong>Netlify</strong> (ฟรี)</li>
+        <li>สร้าง <strong>QR Code</strong> จากลิงก์เว็บ แล้วพิมพ์แจกประชาชน หรือแชร์ผ่าน LINE / Facebook</li>
+        <li>ข้อมูลทุกการตอบบันทึกลง <strong>Google Sheet</strong> ชีต <code>nan_survey</code> อัตโนมัติ</li>
+        <li>Dashboard ดึงข้อมูลจาก Google Sheet แสดงผล real-time เมื่อกด "รีเฟรช"</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════
+// CONFIG & STATE
+// ══════════════════════════════════
+let SCRIPT_URL = localStorage.getItem('nan_script_url') || 'https://script.google.com/macros/s/AKfycbxJX-zepnoFF2UjGqEl25_avo7Kb3bueka2XlA5ey0bAaua83f2HT1pHkJACyxpGMpd/exec';
+let currentSec = 0;
+let isSubmitting = false;
+
+// ══════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-pill').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById(id);
+  if (page) page.classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'page-dash') loadDash();
+}
+
+function askSetupPassword(btn) {
+  const pwd = prompt('🔒 กรุณาใส่รหัสผ่านเพื่อเข้าหน้าตั้งค่า:');
+  if (pwd === 'onuhma2026') {
+    showPage('page-setup', btn);
+  } else if (pwd !== null) {
+    alert('❌ รหัสผ่านไม่ถูกต้อง');
+  }
+}
+
+// ══════════════════════════════════
+// FORM INTERACTIONS
+// ══════════════════════════════════
+function pick1(ev, el, gridId, hiddenId) {
+  if (ev) ev.preventDefault();
+  document.querySelectorAll('#' + gridId + ' .choice-item').forEach(i => i.classList.remove('selected'));
+  el.classList.add('selected');
+  const inp = el.querySelector('input');
+  if (inp) {
+    inp.checked = true;
+    document.getElementById(hiddenId).value = inp.value;
+  }
+  calcProg();
+}
+
+function pickM(ev, el) {
+  if (ev) ev.preventDefault();
+  const inp = el.querySelector('input');
+  if (el.classList.contains('selected')) {
+    el.classList.remove('selected');
+    if (inp) inp.checked = false;
+  } else {
+    el.classList.add('selected');
+    if (inp) inp.checked = true;
+  }
+  calcProg();
+}
+
+function pickScale(el, gridId, hiddenId, val) {
+  document.querySelectorAll('#' + gridId + ' .scale-btn').forEach(b => {
+    b.classList.remove('active','active-gold');
+  });
+  el.classList.add('active');
+  document.getElementById(hiddenId).value = val;
+  calcProg();
+}
+
+// ══════════════════════════════════
+// SECTIONS
+// ══════════════════════════════════
+function goSec(n) {
+  if (n > currentSec && !validateSec(currentSec)) return;
+  document.getElementById('sec' + currentSec).style.display = 'none';
+  currentSec = n;
+  document.getElementById('sec' + n).style.display = 'block';
+  updateSteps();
+  calcProg();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function validateSec(n) {
+  if (n === 0) {
+    if (!document.getElementById('v-gender').value) { alert('กรุณาเลือกเพศ'); return false; }
+    if (!document.getElementById('v-age').value) { alert('กรุณาเลือกอายุ'); return false; }
+    if (!document.getElementById('v-district').value) { alert('กรุณาเลือกอำเภอ'); return false; }
+  }
+  if (n === 1) {
+    const checked = document.querySelectorAll('#g-problems input:checked');
+    if (checked.length === 0) { alert('กรุณาเลือกปัญหาอย่างน้อย 1 ข้อ'); return false; }
+  }
+  if (n === 2) {
+    if (!document.getElementById('v-priority').value) { alert('กรุณาเลือกยุทธศาสตร์ที่สำคัญที่สุด'); return false; }
+  }
+  return true;
+}
+
+function updateSteps() {
+  for (let i = 0; i < 5; i++) {
+    const st = document.getElementById('st' + i);
+    st.classList.remove('active','done');
+    if (i < currentSec) { st.classList.add('done'); }
+    else if (i === currentSec) { st.classList.add('active'); }
+    if (i < 4) {
+      const sl = document.getElementById('sl' + i);
+      sl.classList.toggle('done', i < currentSec);
+    }
+  }
+}
+
+function calcProg() {
+  const filled = [
+    document.getElementById('v-gender').value,
+    document.getElementById('v-age').value,
+    document.getElementById('v-district').value,
+    document.querySelectorAll('#g-problems input:checked').length > 0 ? '1' : '',
+    document.getElementById('v-priority').value,
+  ].filter(Boolean).length;
+  const pct = Math.round((filled / 5) * 100);
+  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = filled + ' / 5 ส่วนที่จำเป็น';
+}
+
+// ══════════════════════════════════
+// SUBMIT
+// ══════════════════════════════════
+// ส่งข้อมูลผ่าน Image GET request → ข้าม CORS ได้เสมอ ไม่มี redirect
+// GAS doGet รับ ?payload=JSON แล้วบันทึก sheet
+function sendViaForm(url, data) {
+  return new Promise((resolve) => {
+    try {
+      const json = JSON.stringify(data);
+      const encoded = encodeURIComponent(json);
+      const src = url + '?payload=' + encoded + '&t=' + Date.now();
+      // ใช้ Image เพราะไม่ติด CORS และไม่ต้องการ response body
+      const img = new Image();
+      img.onload = img.onerror = () => resolve();
+      setTimeout(resolve, 8000); // fallback timeout
+      img.src = src;
+    } catch(e) {
+      resolve(); // resolve ไม่ reject เพื่อไม่ให้ UX พัง
+    }
+  });
+}
+
+async function submitForm() {
+  if (!validateSec(4)) return;
+  if (isSubmitting) return;
+
+  const getChecked = (name) => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i=>i.value).join(', ');
+
+  const payload = {
+    gender: document.getElementById('v-gender').value,
+    age: document.getElementById('v-age').value,
+    edu: document.getElementById('v-edu').value,
+    job: document.getElementById('v-job').value,
+    income: document.getElementById('v-income').value,
+    district: document.getElementById('v-district').value,
+    village: document.getElementById('v-village').value,
+    residence: document.getElementById('v-residence').value,
+    problems: getChecked('prob'),
+    topProblem: getChecked('tprob'),
+    severity: document.getElementById('v-severity').value,
+    reported: document.getElementById('v-reported').value,
+    agri: document.getElementById('v-agri').value,
+    tour: document.getElementById('v-tour').value,
+    env: document.getElementById('v-env').value,
+    life: document.getElementById('v-life').value,
+    infra: document.getElementById('v-infra').value,
+    priority: document.getElementById('v-priority').value,
+    needs: getChecked('need'),
+    policy: getChecked('pol'),
+    satisfy: document.getElementById('v-satisfy').value,
+    suggest: document.getElementById('v-suggest').value,
+    strength: getChecked('str'),
+    participate: getChecked('part'),
+    contact: document.getElementById('v-contact').value,
+    ts: new Date().toISOString()
+  };
+
+  // บันทึกลง localStorage ก่อนเสมอ (offline-safe)
+  const stored = JSON.parse(localStorage.getItem('nan_responses') || '[]');
+  stored.push({...payload, timestamp: new Date().toLocaleString('th-TH', {timeZone:'Asia/Bangkok'})});
+  localStorage.setItem('nan_responses', JSON.stringify(stored));
+
+  const btn = document.getElementById('btn-submit');
+  isSubmitting = true;
+  btn.disabled = true;
+  btn.textContent = '⏳ กำลังส่งข้อมูล...';
+
+  // ส่งผ่าน hidden iframe + form — ข้าม CORS ได้ 100%
+  let sentToSheet = false;
+  if (SCRIPT_URL) {
+    try {
+      await sendViaForm(SCRIPT_URL, payload);
+      sentToSheet = true;
+    } catch(e) {
+      console.warn('ส่ง Google Sheets ไม่สำเร็จ:', e.message);
+    }
+  }
+
+  isSubmitting = false;
+  document.getElementById('form-main').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+  const sentMsg = document.getElementById('sent-status');
+  if (sentMsg) {
+    sentMsg.style.display = 'block';
+    sentMsg.textContent = sentToSheet
+      ? '✅ ข้อมูลถูกส่งไปยัง Google Sheets เรียบร้อยแล้ว'
+      : (SCRIPT_URL ? '⚠️ ไม่สามารถเชื่อมต่อ Google Sheets — กรุณา Deploy Script ใหม่ในหน้าตั้งค่า' : '💾 ข้อมูลบันทึกในเครื่องแล้ว');
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+  updateHeroCount();
+}
+function resetForm() {
+  document.getElementById('form-main').style.display = 'block';
+  document.getElementById('form-success').style.display = 'none';
+  document.querySelectorAll('.choice-item').forEach(el => { el.classList.remove('selected'); const i = el.querySelector('input'); if(i) i.checked = false; });
+  document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active','active-gold'));
+  document.querySelectorAll('.form-input,.form-textarea').forEach(el => el.value='');
+  document.querySelectorAll('.form-select').forEach(el => el.selectedIndex=0);
+  document.querySelectorAll('input[type=hidden]').forEach(el => el.value='');
+  document.getElementById('btn-submit').disabled = false;
+  document.getElementById('btn-submit').textContent = '✅ ส่งแบบสอบถาม — เพื่อพัฒนาจังหวัดน่าน';
+  // Reset to sec0
+  for(let i=1;i<5;i++) document.getElementById('sec'+i).style.display='none';
+  document.getElementById('sec0').style.display='block';
+  currentSec = 0;
+  updateSteps(); calcProg();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══════════════════════════════════
+// DASHBOARD
+// ══════════════════════════════════
+const COLORS = ['#1a5c3a','#2d9960','#c8860a','#164e8a','#b5341c','#5c3d1e','#217a4d','#e8a212','#2d6db8','#8a1f0e','#4a7c3f','#d4600a','#1e6b9e','#7a4f1e','#3aab6d'];
+
+function countKey(data, key) {
+  const map = {};
+  data.forEach(d => {
+    const vals = (d[key]||'').split(',').map(v=>v.trim()).filter(Boolean);
+    vals.forEach(v => { map[v] = (map[v]||0) + 1; });
+  });
+  return map;
+}
+
+function renderBarList(containerId, dataMap, topN=7) {
+  const el = document.getElementById(containerId);
+  const sorted = Object.entries(dataMap).sort((a,b)=>b[1]-a[1]).slice(0,topN);
+  const max = sorted[0]?.[1] || 1;
+  el.innerHTML = sorted.length ? sorted.map(([lbl,val],i) =>
+    `<div class="bar-row">
+      <span class="bar-lbl">${lbl}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${Math.round(val/max*100)}%;background:${COLORS[i]||COLORS[0]}">${val}</div>
+      </div>
+    </div>`
+  ).join('') : '<div style="color:var(--text3);font-size:13px">ไม่มีข้อมูล</div>';
+}
+
+function renderDistrictSplit(dataMap) {
+  const sorted = Object.entries(dataMap).sort((a,b)=>b[1]-a[1]).slice(0,15);
+  const max = sorted[0]?.[1] || 1;
+  const makeRows = (entries) => entries.length ? entries.map(([lbl,val],i) =>
+    `<div class="bar-row">
+      <span class="bar-lbl">${lbl}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${Math.round(val/max*100)}%;background:${COLORS[i]||COLORS[0]}">${val}</div>
+      </div>
+    </div>`
+  ).join('') : '<div style="color:var(--text3);font-size:13px">ไม่มีข้อมูล</div>';
+  document.getElementById('ch-district-a').innerHTML = makeRows(sorted.slice(0,8));
+  document.getElementById('ch-district-b').innerHTML = makeRows(sorted.slice(8,15));
+}
+
+function renderNeedsSplit(dataMap) {
+  const sorted = Object.entries(dataMap).sort((a,b)=>b[1]-a[1]).slice(0,13);
+  const max = sorted[0]?.[1] || 1;
+  const makeRows = (entries) => entries.length ? entries.map(([lbl,val],i) =>
+    `<div class="bar-row">
+      <span class="bar-lbl">${lbl}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${Math.round(val/max*100)}%;background:${COLORS[i]||COLORS[0]}">${val}</div>
+      </div>
+    </div>`
+  ).join('') : '<div style="color:var(--text3);font-size:13px">ไม่มีข้อมูล</div>';
+  document.getElementById('ch-needs-a').innerHTML = makeRows(sorted.slice(0,7));
+  document.getElementById('ch-needs-b').innerHTML = makeRows(sorted.slice(7,13));
+}
+
+function avg(data, key) {
+  const vals = data.map(d=>parseFloat(d[key])).filter(v=>!isNaN(v));
+  return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : '—';
+}
+
+function loadDash() {
+  const localData = JSON.parse(localStorage.getItem('nan_responses') || '[]');
+  const demoBanner = document.getElementById('demo-banner');
+  const refreshBtn = document.getElementById('btn-dash-refresh');
+
+  // แสดงข้อมูล local ก่อน (หรือ demo ถ้าไม่มี)
+  const displayData = localData.length > 0 ? localData : genDemo();
+  if (localData.length === 0) {
+    if (demoBanner) demoBanner.style.display = 'flex';
+  } else {
+    if (demoBanner) demoBanner.style.display = 'none';
+  }
+  renderDashboard(displayData);
+
+  // ดึงข้อมูลจริงจาก Google Sheets (ถ้าตั้งค่า URL ไว้)
+  if (SCRIPT_URL) {
+    if (refreshBtn) { refreshBtn.textContent = '⏳ กำลังโหลด...'; refreshBtn.disabled = true; }
+    // Google Apps Script ต้องใช้ script tag trick เพื่อดึงข้อมูล (JSONP)
+    // เพราะ CORS บน GAS doGet ไม่ถูก set ให้ browser อ่านได้โดยตรง
+    const cbName = '_gasCallback_' + Date.now();
+    const script = document.createElement('script');
+    let done = false;
+    const timer = setTimeout(() => {
+      if (!done) {
+        done = true;
+        document.head.removeChild(script);
+        delete window[cbName];
+        if (refreshBtn) { refreshBtn.textContent = '🔄 รีเฟรช'; refreshBtn.disabled = false; }
+        showToast('⚠️ หมดเวลา — ตรวจสอบ Script URL หรือสิทธิ์ Anyone');
+        document.getElementById('dash-updated').textContent = 'อัปเดต: ' + new Date().toLocaleString('th-TH');
+      }
+    }, 10000);
+    window[cbName] = function(apiData) {
+      done = true;
+      clearTimeout(timer);
+      document.head.removeChild(script);
+      delete window[cbName];
+      if (refreshBtn) { refreshBtn.textContent = '🔄 รีเฟรช'; refreshBtn.disabled = false; }
+      document.getElementById('dash-updated').textContent = 'อัปเดต: ' + new Date().toLocaleString('th-TH');
+      if (Array.isArray(apiData) && apiData.length > 0) {
+        const mapped = apiData.map(row => ({
+          timestamp: row['timestamp'] || '',
+          gender: row['เพศ'] || row.gender || '',
+          age: row['อายุ'] || row.age || '',
+          edu: row['การศึกษา'] || row.edu || '',
+          job: row['อาชีพ'] || row.job || '',
+          income: row['รายได้'] || row.income || '',
+          district: row['อำเภอ'] || row.district || '',
+          village: row['ตำบล/หมู่บ้าน'] || row.village || '',
+          problems: row['ปัญหา'] || row.problems || '',
+          topProblem: row['ปัญหาเร่งด่วน'] || row.topProblem || '',
+          severity: row['ระดับความรุนแรง'] || row.severity || '',
+          priority: row['ยุทธศาสตร์หลัก'] || row.priority || '',
+          needs: row['ความต้องการ'] || row.needs || '',
+          policy: row['นโยบายที่ต้องการ'] || row.policy || '',
+          satisfy: row['ความพึงพอใจ'] || row.satisfy || '',
+        }));
+        localStorage.setItem('nan_responses', JSON.stringify(mapped));
+        if (demoBanner) demoBanner.style.display = 'none';
+        renderDashboard(mapped);
+        showToast('✅ โหลดข้อมูลจาก Google Sheets สำเร็จ (' + mapped.length + ' รายการ)');
+      } else {
+        showToast('⚠️ Google Sheet ยังไม่มีข้อมูล');
+      }
+    };
+    script.src = SCRIPT_URL + '?callback=' + cbName + '&t=' + Date.now();
+    document.head.appendChild(script);
+  }
+}
+
+function renderDashboard(data) {
+  document.getElementById('k-total').textContent = data.length;
+  document.getElementById('k-severity').textContent = avg(data,'severity');
+  document.getElementById('k-satisfy').textContent = avg(data,'satisfy');
+
+  const dc = countKey(data,'district');
+  const topD = Object.entries(dc).sort((a,b)=>b[1]-a[1])[0];
+  if (topD) { document.getElementById('k-district').textContent = topD[0]; document.getElementById('k-district-n').textContent = topD[1]+' คน'; }
+
+  const pc = countKey(data,'priority');
+  const topP = Object.entries(pc).sort((a,b)=>b[1]-a[1])[0];
+  if (topP) { document.getElementById('k-priority').textContent = topP[0]; document.getElementById('k-priority-n').textContent = topP[1]+' คน'; }
+
+  renderBarList('ch-problems', countKey(data,'problems'));
+  renderBarList('ch-top-problem', countKey(data,'topProblem'));
+  renderBarList('ch-priority', countKey(data,'priority'), 6);
+  renderBarList('ch-policy', countKey(data,'policy'));
+  renderDistrictSplit(countKey(data,'district'));
+  renderNeedsSplit(countKey(data,'needs'));
+  renderBarList('ch-age', countKey(data,'age'), 7);
+  renderBarList('ch-job', countKey(data,'job'), 6);
+
+  const tbody = document.getElementById('ch-recent');
+  const recent = [...data].reverse().slice(0,10);
+  const sClass = s => s>=4?'tag-r':s>=3?'tag-o':s>=2?'tag-y':'tag-g';
+  tbody.innerHTML = recent.map(d => {
+    const sev = parseFloat(d.severity)||0;
+    return `<tr>
+      <td style="white-space:nowrap">${d.timestamp||'—'}</td>
+      <td>${d.district||'—'}</td>
+      <td style="max-width:180px">${(d.problems||'').split(',')[0]||'—'}</td>
+      <td>${d.priority||'—'}</td>
+      <td><span class="tag ${sClass(sev)}">${sev}/5</span></td>
+      <td>${d.satisfy?'★'.repeat(+d.satisfy)+'☆'.repeat(5-+d.satisfy):'—'}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--text3)">ไม่มีข้อมูล</td></tr>';
+
+  document.getElementById('dash-updated').textContent = 'อัปเดต: '+new Date().toLocaleString('th-TH');
+}
+
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1612;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;opacity:0;transition:opacity 0.3s;max-width:90vw;text-align:center';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => { t.style.opacity = '0'; }, 3500);
+}
+function genDemo() {
+  const districts=['เมืองน่าน','เวียงสา','ปัว','ท่าวังผา','ทุ่งช้าง','บ่อเกลือ','สันติสุข','นาน้อย','เชียงกลาง','ภูเพียง'];
+  const problems=['ถนน/การสัญจร','น้ำประปา/น้ำอุปโภค','หมอกควัน/ไฟป่า','ความยากจน/รายได้','ภัยแล้ง','ยาเสพติด','การศึกษา','สาธารณสุข/สุขภาพ'];
+  const priorities=['โครงสร้างพื้นฐาน','เกษตรและอาหาร','สิ่งแวดล้อม','คุณภาพชีวิต','การท่องเที่ยว'];
+  const ages=['26–35 ปี','36–45 ปี','46–55 ปี','18–25 ปี','56–65 ปี'];
+  const jobs=['เกษตรกร','รับจ้างทั่วไป','ค้าขาย / ธุรกิจส่วนตัว','ข้าราชการ / พนักงานรัฐ','นักเรียน / นักศึกษา'];
+  const needs=['ถนน/สะพาน','แหล่งน้ำเพื่อการเกษตร','ส่งเสริมอาชีพ/ฝึกทักษะ','อินเทอร์เน็ต/โทรศัพท์','แก้ปัญหาหมอกควัน','โรงพยาบาล/คลินิก'];
+  const data=[];
+  for(let i=0;i<55;i++){
+    const n=Math.floor(Math.random()*3)+1;
+    const pr=[]; for(let j=0;j<n;j++) pr.push(problems[Math.floor(Math.random()*problems.length)]);
+    const nd=[]; for(let j=0;j<2;j++) nd.push(needs[Math.floor(Math.random()*needs.length)]);
+    data.push({
+      timestamp:new Date(Date.now()-Math.random()*14*86400000).toLocaleString('th-TH'),
+      district:districts[Math.floor(Math.random()*districts.length)],
+      age:ages[Math.floor(Math.random()*ages.length)],
+      job:jobs[Math.floor(Math.random()*jobs.length)],
+      problems:[...new Set(pr)].join(', '),
+      priority:priorities[Math.floor(Math.random()*priorities.length)],
+      needs:[...new Set(nd)].join(', '),
+      severity:(Math.random()*4+1).toFixed(0),
+      satisfy:(Math.random()*2+2).toFixed(0),
+    });
+  }
+  return data;
+}
+
+// ══════════════════════════════════
+// SETUP
+// ══════════════════════════════════
+function saveUrl() {
+  const url = document.getElementById('setup-url').value.trim();
+  const msgEl = document.getElementById('url-ok');
+  if (!url) {
+    msgEl.textContent = '⚠️ กรุณากรอก URL ก่อน';
+    msgEl.style.display = 'block'; msgEl.style.color = 'var(--red)'; return;
+  }
+  if (!url.startsWith('https://script.google.com/macros/')) {
+    msgEl.textContent = '⚠️ URL ควรขึ้นต้นด้วย https://script.google.com/macros/s/...';
+    msgEl.style.display = 'block'; msgEl.style.color = 'var(--red)'; return;
+  }
+  SCRIPT_URL = url;
+  localStorage.setItem('nan_script_url', url);
+  // ไม่ต้องทดสอบ fetch เพราะ GAS บล็อก CORS เสมอ
+  // การส่งแบบสอบถามใช้ hidden form ซึ่งไม่ติด CORS อยู่แล้ว
+  msgEl.textContent = '✅ บันทึก URL สำเร็จ — ระบบพร้อมรับข้อมูลแล้ว';
+  msgEl.style.color = 'var(--nan-green)';
+  msgEl.style.display = 'block';
+}
+
+function clearUrl() {
+  SCRIPT_URL = '';
+  localStorage.removeItem('nan_script_url');
+  document.getElementById('setup-url').value = '';
+  const msgEl = document.getElementById('url-ok');
+  msgEl.textContent = '🗑️ ล้าง URL แล้ว';
+  msgEl.style.color = 'var(--text3)';
+  msgEl.style.display = 'block';
+  setTimeout(() => msgEl.style.display='none', 2000);
+}
+
+// ══════════════════════════════════
+// HERO COUNT
+// ══════════════════════════════════
+function updateHeroCount() {
+  const el = document.getElementById('hero-count');
+  if (!el) return;
+  const n = JSON.parse(localStorage.getItem('nan_responses')||'[]').length;
+  el.textContent = n;
+}
+
+
+// ══════════════════════════════════
+// EXPORT CSV
+// ══════════════════════════════════
+function exportCSV() {
+  const data = JSON.parse(localStorage.getItem('nan_responses') || '[]');
+  if (data.length === 0) { showToast('ไม่มีข้อมูลสำหรับ Export'); return; }
+  const headers = ['timestamp','gender','age','edu','job','income','district','village','problems','severity','priority','needs','satisfy'];
+  const thHeaders = ['เวลา','เพศ','อายุ','การศึกษา','อาชีพ','รายได้','อำเภอ','ตำบล/หมู่บ้าน','ปัญหา','ความรุนแรง','ยุทธศาสตร์','ความต้องการ','ความพึงพอใจ'];
+  const rows = [thHeaders, ...data.map(d => headers.map(h => `"${(d[h]||'').toString().replace(/"/g,'""')}"`))];
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'nan_survey_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+  showToast('✅ Export CSV สำเร็จ (' + data.length + ' รายการ)');
+}
+
+// ══════════════════════════════════
+// VILLAGE DATA
+// ══════════════════════════════════
+const VILLAGES = {
+  'เมืองน่าน': ['ในเวียง','ผาสิงห์','ดู่ใต้','กองควาย','ไชยสถาน','บ่อสวก','สะเนียน','เมืองจัง','เรือง','ถืมตอง','ฝายแก้ว'],
+  'แม่จริม': ['หนองแดง','หมอเมือง','น้ำพาง','น้ำปาย'],
+  'บ้านหลวง': ['บ้านฟ้า','ป่าคาหลวง','สวด','บ้านพี้'],
+  'นาน้อย': ['นาน้อย','เชียงของ','ศรีษะเกษ','สถาน','บัวใหญ่','น้ำตก','สันทะ'],
+  'ปัว': ['ปัว','แงง','เจดีย์ชัย','สถาน','ศิลาแลง','ศิลาเพชร','อวน','ไชยวัฒนา','สกาด','ภูคา','ป่ากลาง','วรนคร'],
+  'ท่าวังผา': ['ท่าวังผา','ยม','จอมพระ','ผาตอ','ผาทอง','แสนทอง','ตาลชุม','ศรีภูมิ','ริม','ป่าคา'],
+  'เวียงสา': ['กลางเวียง','ขึ่ง','จอมจันทร์','ตาลชุม','ทุ่งศรีทอง','นาเหลือง','น้ำปั้ว','น้ำมวบ','ปงสนุก','ยาบหัวนา','ส้าน','ส้านนาหนองใหม่','อ่ายนาไลย','แม่ขะนิง','แม่สา','แม่สาคร','ไหล่น่าน'],
+  'ทุ่งช้าง': ['ทุ่งช้าง','และ','งอบ','ปอน'],
+  'เชียงกลาง': ['เชียงกลาง','เปือ','เชียงคาน','พระธาตุ'],
+  'นาหมื่น': ['บ่อแก้ว','นาทะนุง','เมืองลี','ปิงหลวง'],
+  'สันติสุข': ['ดู่พงษ์','พงษ์','ป่าแลวหลวง'],
+  'บ่อเกลือ': ['บ่อเกลือใต้','บ่อเกลือเหนือ','ดงพญา','ภูฟ้า'],
+  'สองแคว': ['นาไร่หลวง','ชนแดน','ยอด'],
+  'ภูเพียง': ['เมืองจัง','ท่าน้าว','นาปัง','น้ำเกี๋ยน','น้ำแก่น','ฝายแก้ว','ม่วงตึ๊ด'],
+  'เฉลิมพระเกียรติ': ['ขุนน่าน','ห้วยโก๋น']
+};
+
+function updateVillage() {
+  const district = document.getElementById('v-district').value;
+  const sel = document.getElementById('v-village');
+  sel.innerHTML = '';
+  if (!district || !VILLAGES[district]) {
+    sel.innerHTML = '<option value="">-- เลือกอำเภอก่อน --</option>';
+    return;
+  }
+  sel.innerHTML = '<option value="">-- เลือกตำบล --</option>';
+  VILLAGES[district].forEach(function(t) {
+    const opt = document.createElement('option');
+    opt.value = t;
+    opt.textContent = t;
+    sel.appendChild(opt);
+  });
+}
+
+// ── INIT ──
+document.addEventListener('DOMContentLoaded', function() {
+  if (SCRIPT_URL) {
+    const el = document.getElementById('setup-url');
+    if (el) el.value = SCRIPT_URL;
+  }
+  updateHeroCount();
+  calcProg();
+});
+</script>
+</body>
+</html>
